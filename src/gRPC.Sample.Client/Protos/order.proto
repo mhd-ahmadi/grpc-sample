@@ -1,0 +1,27 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "gRPC.Sample.Server";
+
+package order;
+
+service Order {
+	rpc CreateOrder (OrderRequest) returns (OrderResponse);
+}
+
+message OrderRequest {
+	int32 customerId = 1;
+	int64 orderTotal = 2;
+	int32 orderDiscount = 3;
+	repeated OrderItemRequest orderItems = 4;
+}
+
+message OrderItemRequest {
+	int32 productId = 1;
+	float quantity = 2;
+	int32 price = 3;
+	int32 discount = 4;
+}
+
+message OrderResponse {
+	int32 orderId = 1;
+}
