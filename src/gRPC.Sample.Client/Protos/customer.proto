@@ -1,0 +1,29 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "gRPC.Sample.Server";
+
+package customer;
+
+service Customer {
+	rpc GetNewCustomers (GetLookupRequest) returns (stream CustomerModel);
+}
+
+message GetLookupRequest {
+}
+
+message CustomerModel {
+	int32 id = 1;
+	string firstName = 2;
+	string lastName = 3;
+	Gender gender = 4;
+	int32 age = 5;
+	string city = 6;
+	string emailAddress = 7;
+}
+
+enum Gender {
+	UNKNOWN = 0;
+	MALE = 1;
+	FEMALE = 2;
+	RATHER_TO_NOT_SAY = 3;
+}
