@@ -10,3 +10,4 @@ A sample project for using gRPC framework in c# environment
   - Google.Protobuf
   - Grpc.Net.Client
   - Grpc.Tools
+  - Faker.Net
